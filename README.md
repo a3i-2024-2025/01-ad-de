@@ -9,7 +9,7 @@ This is the first lecture block of the 2023/2023 edition of the "AI in the Indus
 
 While the whole course looks like cookbook, the real goal is using examples to teach how industrial problem can be methodically approaches, analyzed, and tackles using a combination of techniques.
 
-This tutorial in particular tackles an anomaly detection task via density estimation techniques. The focus is on building an end-to-end solution, where calibrating the detection threshold can be as important as building the density estimation model itself. Being the first lecture block, it also contains specific details about the course and the student evaluation methods.
+This tutorial in particular tackles an anomaly detection task via density estimation techniques. The focus is on building an end-to-end solution, where calibrating the detection threshold can be as important as building the density estimation model itself. Being the first lecture block, it also contains specific details about the course, the final test, and the evaluation criteria.
 
 # Accessing the Lecture #
 
@@ -17,37 +17,21 @@ This tutorial in particular tackles an anomaly detection task via density estima
 
 Students are strongly encouraged to _run all lectures locally_. Doing this will require to:
 
-* Install Docker, by following the [online instructions](https://docs.docker.com/get-docker/).
-* Linux users should also install Docker Compose, by following the [online
-instructions](https://docs.docker.com/compose/install/)
 * Download or clone this repository, e.g. via the command:
 ```sh
-git clone https://github.com/a3i-2023-2024/01-ad-de.git
+git clone https://github.com/a3i-2024-2025/01-ad-de.git
 ```
 * Open a terminal in the main directory of the downloaded/cloned repository
-* Start the container via Docker Compose:
+* Install the required dependencies, _by using a virtual environment_. Each lectures already contains configuration files to manage dependencies via [poetry](https://python-poetry.org). If you are using poetry, you can install dependencies via:
 ```sh
-docker compose up
+poetry install
+```
+* Start the notebook server in a virtual environment
+```sh
+poetry run jupyter notebook
 ```
 
-On Linux systems, you may need to start the docker service first.
-
-No matter which OS your are running, the first execution of this process will be fairly long, since Docker will need to download a base image for the container (think of a virtual machine disk) and then some boilerplate configuration steps will need to be performed (e.g. installing jupyter in the container). Subsequent runs will be much faster.
-
-The process will end with a message such as this one:
-
-```sh
-To access the notebook, open this file in a browser:
-    file:///home/lompa/.local/share/jupyter/runtime/nbserver-1-open.html
-Or copy and paste this URL:
-    http://127.0.0.1:39281/?token=0cd92163797c3b3abe67c2b0aea57939867477d6068708a2
-```
-
-Copying one of the two addresses in a file browser will provide access to the Jupyter server running in the spawned container. By default, the main lecture folders is shared with the container environment, so any modification you make in the contain will reflect in the host system, and the other way round.
-
-Once you are done, pressing CTRL+C on the terminal will close the Docker container.
-
-For more information about how Docker works (such as the difference between images and containers, or how to get rid of all of them once you are done with the tutorial), you can check the [Docker documentation](https://docs.docker.com/).
+If you do not wish to use poetry, a `requirements.txt` file with frozen dependency versions is also provided. However, **you are strongly advised to still use virtual environments**. The course will eventually make use of multiple libraries and package versions between lectures will sometimes be inconsistent.
 
 ## Read-only Access and PDF Notes ##
 
