@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "01-ad-de"
+version = "0.1.0"
+description = ""
+authors = ["Michele Lombardi <michele.lombardi2@unibo.it>"]
+readme = "README.md"
+package-mode = false
+
+[tool.poetry.dependencies]
+python = "^3.11"
+notebook = "^6"
+pandas = "^2.2.2"
+scikit-learn = "^1.5.2"
+matplotlib = "^3.9.2"
+rise = "^5.7.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
